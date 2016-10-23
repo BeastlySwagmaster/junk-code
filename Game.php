@@ -21,13 +21,13 @@ class Game
 		{
 			$turnCount ++;
 
-			if($turnCount % 2 == 0)
-			{
-				playTurn($player2);
-			}
-			else if ($turnCount % 2 == 1)
+			if($turnCount % 2 == 1)
 			{
 				playTurn($player1);
+			}
+			else if ($turnCount % 2 == 0)
+			{
+				playTurn($player2);
 			}			
 			
 		} while($gameOver != True);
