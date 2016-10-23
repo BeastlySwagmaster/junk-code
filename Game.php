@@ -16,9 +16,10 @@ class Game
 	
 	public function incrementTurn()
 	{
+		//This loop increments the turn counter, decides who gets to play next, and decides when the game is over.
 		do
 		{
-			$turnCount += 1;
+			$turnCount ++;
 
 			if($turnCount % 2 == 0)
 			{
@@ -36,7 +37,7 @@ class Game
 	{
 		$currentPlayer.deck.draw();
 		
-		
+		//Lots of other stuff will be in here.
 	}
 }
 
