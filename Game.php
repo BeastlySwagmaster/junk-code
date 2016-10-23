@@ -21,7 +21,7 @@ class Game
 	
 	public function drawBackground()
 	{
-		//Randomly select a background here lul
+		//Randomly select a background here
 	}
 	
 	public function runGame()
