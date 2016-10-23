@@ -31,7 +31,7 @@ class Deck
 		shuffle($deck);
 	}
 	
-	public function pop()
+	public function draw()
 	{
 		return array_pop($deck);
 	}
