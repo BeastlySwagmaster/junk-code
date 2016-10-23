@@ -1,0 +1,107 @@
+<?php
+
+require_once 'Deck.php';
+require_once 'Card.php';
+
+class Player 
+{
+	//variable for their deck of cards
+	private $playerDeck;
+	//variable for keeping track of their wins to display
+	private $victories;
+	//variable for holding their number of defeats to display
+	private $defeats;
+	//variable for their name. Derp.
+	private $name;
+	//variable for number of cards active in hand at a given time
+	//necessary for determining win conditions
+	private $activeCards;
+	//need an array of cards that the player currently has
+	private $cardsInHand;
+	//constructor for the class
+	public function __construct($name)
+	{
+		$this->name = $name;
+		$this->taunt();
+	}
+	public function taunt()
+	{
+		$randNum = rand(1,5);
+		
+		switch ($randNum) {
+			case 1:
+				echo "Git gud n00b<br>";
+				break;
+			case 2:
+				echo "Totes banged ur mom<br>";
+				break;
+			case 3:
+				echo "Your shirt is red!<br>";
+				break;
+			case 4:
+				echo "You are a loser.<br>";
+				break;
+			case 5:
+				echo "Your famiry vewy disappoint!<br>";
+				break;
+			default:
+				echo "Can't think of anything witty...<br>";
+		}
+	}
+	//function for drawing cards
+	public function drawCard($playerDeck)
+	{
+		//return a random card from their deck
+		return $playerDeck[rand(0,count($playerDeck)-1)];
+	}
+	//in case player decides to keep card that is drawn
+	public function addToHand(Card $card)
+	{
+		//add the selected card to the player's hand
+		array_push($cardsInHand, $card);
+	}
+	
+	//setters and getters for each of them
+	public function setActiveCards($number)
+	{
+		$this->activeCards = $number;
+	}
+	public function getActiveCards()
+	{
+		return $this->activeCards;
+	}
+	public function setName($name)
+	{
+		$this->name = $name;
+	}
+	public function getName()
+	{
+		return $this->name;
+	}
+	public function setVictories($victories)
+	{
+		$this->victories = $victories;
+	}
+	public function getVictories()
+	{
+		return $this->victories;
+	}
+	public function setDefeats($defeats)
+	{
+		$this->defeats = $defeats;
+	}
+	public function getDefeats()
+	{
+		return $this->defeats;
+	}
+	public function setPlayerDeck(Deck $deck)
+	{
+		$this->playerDeck = $deck;
+	}
+	public function getPlayerDeck()
+	{
+		return $this->playerDeck;
+	}
+	
+}
+?>
