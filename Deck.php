@@ -11,6 +11,17 @@ class Deck
 	//temporary placeholder value for maximum size of deck
 	const MAX_SIZE = 20;
 	
+	public function __construct()
+	{
+		$full = False;
+		do
+		{
+			$full = addCard(/*We need to retrieve info from the database*/);
+		}while($full == False);
+			
+		shuffle();
+	}
+	
 	public function addCard(Card $card)
 	{
 		//check to make sure that they don't already have too many cards before adding
@@ -21,8 +32,8 @@ class Deck
 			array_push($deck, $card);
 		}
 		else
-		{
-			echo "You already have a full deck.";
+		{	//Return to boolean 'full' that the deck is full
+			return True;
 		}
 	}
 	
