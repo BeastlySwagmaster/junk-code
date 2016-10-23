@@ -45,7 +45,7 @@ class Game
 	
 	public function playTurn(Player $currentPlayer)
 	{
-		$currentPlayer.deck.draw();
+		$currentPlayer.drawCard();
 		
 		//Lots of other stuff will be in here.
 	}
