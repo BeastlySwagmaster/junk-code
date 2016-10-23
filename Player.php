@@ -52,7 +52,7 @@ class Player
 	public function drawCard($playerDeck)
 	{
 		//return a random card from their deck
-		return $playerDeck[rand(0,count($playerDeck)-1)];
+		return $playerDeck.draw();
 	}
 	//in case player decides to keep card that is drawn
 	public function addToHand(Card $card)
