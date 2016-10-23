@@ -23,6 +23,8 @@ class Player
 	{
 		$this->name = $name;
 		$this->taunt();
+		$thid->playerDeck = new Deck();
+		$playerdeck.shuffle();
 	}
 	public function taunt()
 	{
