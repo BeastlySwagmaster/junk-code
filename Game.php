@@ -12,15 +12,24 @@ class Game
 		echo "This will be a match between ". $player1->getName() . " and " . $player2->getName() . "<br>";
 		$turnCount = 0;
 		$gameOver = False;
+		drawBackground();
+		
+		//Handle mulligans here before starting the game?
+		
+		runGame();
 	}	
 	
-	public function incrementTurn()
+	public function drawBackground()
+	{
+		//Randomly select a background here lul
+	}
+	
+	public function runGame()
 	{
 		//This loop increments the turn counter, decides who gets to play next, and decides when the game is over.
 		do
 		{
 			$turnCount ++;
-
 			if($turnCount % 2 == 1)
 			{
 				playTurn($player1);
@@ -29,8 +38,9 @@ class Game
 			{
 				playTurn($player2);
 			}			
-			
 		} while($gameOver != True);
+		
+		updateRecord();
 	}
 	
 	public function playTurn(Player $currentPlayer)
@@ -38,6 +48,11 @@ class Game
 		$currentPlayer.deck.draw();
 		
 		//Lots of other stuff will be in here.
+	}
+	
+	public function updateRecord()
+	{
+		
 	}
 }
 
