@@ -50,7 +50,7 @@ class Player
 		}
 	}
 	//function for drawing cards
-	public function drawCard($playerDeck)
+	public function drawCard()
 	{
 		//return a random card from their deck
 		return $playerDeck.draw();
