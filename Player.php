@@ -23,7 +23,7 @@ class Player
 	{
 		$this->name = $name;
 		$this->taunt();
-		$thid->playerDeck = new Deck();
+		$this->playerDeck = new Deck();
 	}
 	public function taunt()
 	{
