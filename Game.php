@@ -59,7 +59,7 @@ class Game
 	{
 		$currentPlayer.drawCard();
 		
-		//Lots of other stuff will be in here.
+		$currentPlayer.taunt();
 	}
 	
 	//Honestly I forget what update record was supposed to do 
