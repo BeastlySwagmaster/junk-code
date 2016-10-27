@@ -14,9 +14,9 @@ class Deck
 	public function __construct()
 	{
 			//If you can't connect, explode. The localhost thing is going to have to change when we get a server.
-		if ( !( $database = mysqli_connect( "localhost:8765", $_POST["Username"], $_POST["Password"], "Onslaught" ) ) )
+		if ( !( $database = mysqli_connect( "localhost:8765", $_POST["admin@localhost"], $_POST["secret"], "Onslaught" ) ) )
 		{
-					die("Check your login info.");
+					die("The database couldn't connect.  Check the login info and the database itself.");
 		}
 		
 		$count = 1;
@@ -36,6 +36,7 @@ class Deck
 			}
 			
 			//I believe this will give a string of the whole table row.  We need to parse it.
+			//We'll probably need some testing to figure out exactly what's going on here because I'm fuzzy on it.
 			$info = mysqli_fetch_fields($result);
 		//	$health = 
 		//	$image = 
