@@ -13,11 +13,23 @@ class Game
 		$turnCount = 0;
 		$gameOver = False;
 		drawBackground();
-		
-		//Handle mulligans here before starting the game?
-		
+		mulligan();
 		runGame();
 	}	
+	
+	//Right now it just draws cards.  We can implement a mulligan later.
+	public function mulligan()
+	{
+		for($counter1 = 1; $counter1 < 6; $counter1++)
+		{
+			$player1.drawCard();
+		}
+		
+		for($counter2 = 1; $counter2 < 6; $counter2++)
+		{
+			$player2.drawCard()
+		}
+	}
 	
 	public function drawBackground()
 	{
