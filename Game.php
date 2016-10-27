@@ -50,6 +50,7 @@ class Game
 		//Lots of other stuff will be in here.
 	}
 	
+	//Honestly I forget what update record was supposed to do 
 	public function updateRecord()
 	{
 		
