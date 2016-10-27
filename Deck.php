@@ -22,6 +22,7 @@ class Deck
 		shuffle();
 	}
 	
+	//This function returns a booleans telling if it worked
 	public function addCard(Card $card)
 	{
 		//check to make sure that they don't already have too many cards before adding
