@@ -18,11 +18,13 @@ class Player
 	private $activeCards;
 	//need an array of cards that the player currently has
 	private $cardsInHand;
+	
 	//constructor for the class
 	public function __construct($name)
 	{
 		$this->name = $name;
 		$this->taunt();
+		$this->setActiveCards(0);
 		$this->playerDeck = new Deck();
 	}
 	public function taunt()
@@ -53,19 +55,28 @@ class Player
 	public function drawCard()
 	{
 		//return a random card from their deck
-		return $playerDeck.draw();
+		$card = $playerDeck.draw();
+		addToHand($card);
 	}
 	//in case player decides to keep card that is drawn
 	public function addToHand(Card $card)
 	{
 		//add the selected card to the player's hand
 		array_push($cardsInHand, $card);
+		incActiveCards();
 	}
-	
 	//setters and getters for each of them
 	public function setActiveCards($number)
 	{
 		$this->activeCards = $number;
+	}
+	public function incActiveCards()
+	{
+		$this->activeCards++;
+	}
+	public function decActiveCards()
+	{
+		$this->activeCards--;
 	}
 	public function getActiveCards()
 	{
