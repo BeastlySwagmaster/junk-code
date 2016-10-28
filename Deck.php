@@ -13,16 +13,23 @@ class Deck
 	
 	public function __construct()
 	{
-			//If you can't connect, explode. The localhost thing is going to have to change when we get a server.
+			
+		dBConnect();
+		shuffle();
+	}
+	
+	public function dBConnect()
+	{
+		$count = 1;
+		$full = False;
+		
+		//If you can't connect, explode. The localhost thing is going to have to change when we get a server.
 		if ( !( $database = mysqli_connect( "localhost:8765", $_POST["admin@localhost"], $_POST["secret"], "Onslaught" ) ) )
 		{
 					die("The database couldn't connect.  Check the login info and the database itself.");
 		}
 		
-		$count = 1;
-		$full = False;
-		
-			//This loop makes the cards.  Might have been bigger that I planned. Can make a new function.
+		//This loop makes the cards.  Might have been bigger that I planned. Can make a new function.
 		do
 		{
 				//We update the database query each time so we can grab a different card.  
@@ -48,8 +55,6 @@ class Deck
 			$count++;
 		}while($full == False);
 		mysqli_close( $database );
-			
-		shuffle();
 	}
 	
 	//This function returns a booleans telling if it worked
@@ -68,7 +73,7 @@ class Deck
 		}
 	}
 	
-	public function shuffe()
+	public function shuffle()
 	{
 		shuffle($deck);
 	}
