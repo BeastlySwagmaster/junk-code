@@ -12,7 +12,6 @@ class Deck
 	private $size;
 		//temporary placeholder value for maximum size of deck
 	//const MAX_SIZE = 20;
-	
 	private $database;
 	private $currSize;
 	
@@ -24,6 +23,14 @@ class Deck
 	
 	public function loadDB()
 	{
+		
+		$charizard = new Card(100, "scary dagron", "Charizard", "fire");
+		$penisMonster = new Card(100,"giant penis", "penis monster", "earth");
+		$cumDumpster = new Card(100, "cum dumpster", "cum dumpster", "poison");
+		$this->addCard($charizard);
+		$this->addCard($penisMonster);
+		$this->addCard($cumDumpster);
+		
 		$count = 1;
 		$full = False;
 		/*
@@ -88,8 +95,6 @@ class Deck
 		{
 			//add card to deck
 			array_push($this->myDeck, $card);
-			print" successfully added " . $card->getTitle() . " to the deck<br>";
-			print "currSize is currently " . $this->currSize . ".<br>";
 			$this->currSize = count($this->myDeck);
 		}
 		else
@@ -100,14 +105,7 @@ class Deck
 	
 	public function deckShuffle()
 	{
-		//echo "cocks cocks huge cocks<br>";
 		shuffle($this->myDeck);
-		for($i = 0; $i < $this->currSize; $i++)
-		{
-			echo $i."<br>";
-			print $this->myDeck[$i]->getTitle();
-			print "<br>";
-		}
 	}
 	
 	public function draw()

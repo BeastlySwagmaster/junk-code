@@ -17,7 +17,7 @@ class Player
 	//necessary for determining win conditions
 	private $activeCards;
 	//need an array of cards that the player currently has
-	private $cardsInHand;
+	private $cardsInHand = array();
 	
 	//constructor for the class
 	public function __construct($name)
@@ -30,9 +30,7 @@ class Player
 	
 	public function taunt()
 	{
-		$randNum = rand(1,5);
-		
-		switch ($randNum) {
+		switch (rand(1,5)) {
 			case 1:
 				echo "Git gud n00b<br>";
 				break;
@@ -52,65 +50,78 @@ class Player
 				echo "Can't think of anything witty...<br>";
 		}
 	}
+	
 	//function for drawing cards
 	public function drawCard()
 	{
 		//return a random card from their deck
-		$card = $playerDeck->draw();
-		addToHand($card);
+		$this->addToHand($this->playerDeck->draw());
 	}
+	
 	//in case player decides to keep card that is drawn
 	public function addToHand(Card $card)
 	{
 		//add the selected card to the player's hand
-		array_push($cardsInHand, $card);
-		incActiveCards();
+		array_push($this->cardsInHand, $card);
+		$this->incActiveCards();
 	}
+	
 	//setters and getters for each of them
 	public function setActiveCards($number)
 	{
 		$this->activeCards = $number;
 	}
+	
 	public function incActiveCards()
 	{
 		$this->activeCards++;
 	}
+	
 	public function decActiveCards()
 	{
 		$this->activeCards--;
 	}
+	
 	public function getActiveCards()
 	{
 		return $this->activeCards;
 	}
+	
 	public function setName($name)
 	{
 		$this->name = $name;
 	}
+	
 	public function getName()
 	{
 		return $this->name;
 	}
+	
 	public function setVictories($victories)
 	{
 		$this->victories = $victories;
 	}
+	
 	public function getVictories()
 	{
 		return $this->victories;
 	}
+	
 	public function setDefeats($defeats)
 	{
 		$this->defeats = $defeats;
 	}
+	
 	public function getDefeats()
 	{
 		return $this->defeats;
 	}
+	
 	public function setPlayerDeck(Deck $deck)
 	{
 		$this->playerDeck = $deck;
 	}
+	
 	public function getPlayerDeck()
 	{
 		return $this->playerDeck;
