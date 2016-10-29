@@ -13,13 +13,13 @@ class Card
 		print "Created a new card named " . $title . " who is a " . $type . " type and has " . $health . " health <br>";
 	}
 
-	public function setName($title)
+	public function setTitle($title)
 	{
-		$this->name = $title;
+		$this->title = $title;
 	}
-	public function getName()
+	public function getTitle()
 	{
-		return $this->name;
+		return $this->title;
 	}
 }
 

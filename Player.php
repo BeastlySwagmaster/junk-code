@@ -27,6 +27,7 @@ class Player
 		$this->setActiveCards(0);
 		$this->playerDeck = new Deck();
 	}
+	
 	public function taunt()
 	{
 		$randNum = rand(1,5);
@@ -55,7 +56,7 @@ class Player
 	public function drawCard()
 	{
 		//return a random card from their deck
-		$card = $playerDeck.draw();
+		$card = $playerDeck->draw();
 		addToHand($card);
 	}
 	//in case player decides to keep card that is drawn
