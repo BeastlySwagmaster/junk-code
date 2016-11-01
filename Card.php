@@ -10,7 +10,7 @@ class Card
 	{
 		$this->title = $title;
 		$this->type = $type;
-		print "Created a new card named " . $title . " who is a " . $type . " type and has " . $health . " health <br>";
+		echo "Created a new card named " . $title . " who is a " . $type . " type and has " . $health . " health <br>";
 	}
 
 	public function setTitle($title)
