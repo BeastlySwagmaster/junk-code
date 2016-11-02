@@ -68,11 +68,10 @@ class Deck
 			}
 			
 			$card = new Card($health, $image, $title, $type);
-			//$full = $this->addCard($health, $image, $title, $type);
-			$this->addCard($card);
+			$full = $this->addCard($card);
 		
 			$count++;
-		}while($count < 4);
+		}while($full == False);
 		mysqli_close( $database );
 		
 	}
