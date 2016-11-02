@@ -79,18 +79,17 @@ class Deck
 	//This function returns a booleans telling if it worked
 	public function addCard(Card $card)
 	{
+		array_push($this->myDeck, $card);
 		$this->currSize = count($this->myDeck);
 	
-		//check to make sure that they don't already have too many cards before adding to their deck
-		if($this->currSize <= MAX_SIZE)
+		//Check if this is the last card
+		if($this->currSize == MAX_SIZE)
 		{
-			//add card to deck
-			array_push($this->myDeck, $card);
-			$this->currSize = count($this->myDeck);
+			return True;
 		}
 		else
-		{	//Return to boolean 'full' that the deck is full
-			return True;
+		{
+			return False;
 		}
 	}
 	
