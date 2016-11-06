@@ -7,15 +7,11 @@ class Player
 {
 	//variable for their deck of cards
 	private $playerDeck;
-	//variable for keeping track of their wins to display
-	private $victories;
-	//variable for holding their number of defeats to display
-	private $defeats;
 	//variable for their name. Derp.
 	private $name;
 	//variable for number of cards active in hand at a given time
 	//necessary for determining win conditions
-	private $activeCards;
+	private $activeCards = array();
 	//need an array of cards that the player currently has
 	private $cardsInHand = array();
 	
