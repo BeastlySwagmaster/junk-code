@@ -9,6 +9,7 @@ class Game
 	private $player1;
 	private $gameOver;
 	private $turnCount;
+	private $datePlayed;
 	
 	public function __construct()
 	{
@@ -39,6 +40,7 @@ class Game
 	public function drawBackground()
 	{
 		//Randomly select a background here
+		return 1;
 	}
 	
 	public function runGame()
@@ -57,8 +59,9 @@ class Game
 				break;
 			}			
 		} while($this->gameOver == False);
+		$this->updateRecord($this->player1);
+		$this->updateRecord($this->player2);
 		
-		$this->updateRecord();
 	}
 	
 	public function playTurn(Player $currentPlayer)
@@ -69,7 +72,7 @@ class Game
 	}
 	
 	//Honestly I forget what update record was supposed to do 
-	public function updateRecord()
+	public function updateRecord($player)
 	{
 		echo "We made it to the end!<br>";
 	}
