@@ -9,8 +9,6 @@ class Deck
 		//deck will be an array of cards
 	private $myDeck = array();
 		//deck will have a size value
-	private $size;
-		//temporary placeholder value for maximum size of deck
 	//const MAX_SIZE = 20;
 	private $database;
 	private $currSize;
