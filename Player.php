@@ -9,9 +9,11 @@ class Player
 	private $playerDeck;
 	//variable for their name. Derp.
 	private $name;
+	//Health
+	private $health;
 	//variable for number of cards active in hand at a given time
 	//necessary for determining win conditions
-	private $activeCards = array();
+	private $activeCards;
 	//need an array of cards that the player currently has
 	private $cardsInHand = array();
 	
@@ -62,6 +64,16 @@ class Player
 		$this->incActiveCards();
 	}
 	
+	//Ends turn
+	public function endTurn()
+	{
+		return True;
+	}
+	
+	public function Surrender()
+	{
+		return True;
+	}
 	//setters and getters for each of them
 	public function setActiveCards($number)
 	{
@@ -91,26 +103,6 @@ class Player
 	public function getName()
 	{
 		return $this->name;
-	}
-	
-	public function setVictories($victories)
-	{
-		$this->victories = $victories;
-	}
-	
-	public function getVictories()
-	{
-		return $this->victories;
-	}
-	
-	public function setDefeats($defeats)
-	{
-		$this->defeats = $defeats;
-	}
-	
-	public function getDefeats()
-	{
-		return $this->defeats;
 	}
 	
 	public function setPlayerDeck(Deck $deck)
