@@ -6,6 +6,7 @@ class Card
 	private $type;
 	private $title;
 	private $ID;
+	
 	public function __construct($health,$image, $title, $type)
 	{
 		$this->title = $title;
